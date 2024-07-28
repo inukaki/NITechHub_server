@@ -1,0 +1,29 @@
+{
+  "name": "nitechhub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "build": "npx tsc",
+    "build:watch": "npx tsc",
+    "dev": "npm run build:watch & npm run start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.12",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "nodemon": "^3.1.4",
+    "reflect-metadata": "^0.2.2",
+    "routing-controllers": "^0.10.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
