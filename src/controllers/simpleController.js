@@ -8,8 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SimpleController = void 0;
+const passport_1 = __importDefault(require("passport"));
 const routing_controllers_1 = require("routing-controllers");
 let SimpleController = class SimpleController {
     helloWorld() {
@@ -19,6 +23,7 @@ let SimpleController = class SimpleController {
 exports.SimpleController = SimpleController;
 __decorate([
     (0, routing_controllers_1.Get)('/'),
+    (0, routing_controllers_1.UseBefore)(passport_1.default.authenticate('oauth-bearer', { session: false })),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
